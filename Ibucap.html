@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASTER LAMDA DESIGN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header h2 {
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00ffcc;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffaa;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      background: #00cc66;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+
+    .section-content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .form-section {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      max-width: 500px;
+      margin: 2rem auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .form-section input,
+    .form-section textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #eee;
+      color: #333;
+    }
+
+    .form-section button {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #00cc99;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form-section button:hover {
+      background-color: #009973;
+    }
+
+.text-center {
+  text-align: center;
+}
+.portfolio-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  
+}
+.portfolio-item {
+  display: flex;
+  margin-top: 20px;
+  animation: rotateItem 3s infinite linear;
+}
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .social-links a {
+      font-size: 2rem;
+      color: #fff;
+      animation: rotateIcon 3s infinite linear;
+  }
+
+
+    .language-switcher {
+      text-align: center;
+      margin-top: 2rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .language-switcher button {
+      margin: 0 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #3366ff;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .language-switcher button:hover {
+      transform: scale(1.1);
+      background-color: #3355dd;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes rotateIcon {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+     .social-icon {
+       font-size: 22px; 
+       transition: transform 0.5s ease;
+       margin: 0 10px;
+  
+     .social-icon:hover {
+       transform: rotate(360deg);
+  }
+  
+      .whatsapp-icon {
+        color: green;
+  }
+  
+      .facebook-icon {
+        color: #00ffcc
+  }
+  
+        .footer-link {
+          text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MASTER LAMDA DESIGN</h1>
+    <nav>
+  <a href="#" onclick="showSection('accueilSection')">Accueil</a>
+  <a href="#" onclick="showSection('aproposSection')">À propos</a>
+  <a href="#" onclick="showSection('contactSection')">Contact</a>
+  <a href="#" onclick="showSection('portfolioSection')">Portfolio</a>
+</nav>
+    
+    <div id="accueilSection" class="content" style="text-align: center">
+  <h2 style="color: orange;">Bienvenue chez nous !</h2>
+<p>
+Nous sommes ravis de vous accueillir sur notre site officiel.</p>
+      <p>Chez Master Lamda Design, nous transformons vos idées en créations visuelles uniques et impactantes.</p>
+      <p style="color: orange;">Que vous soyez une entreprise, une organisation ou un particulier, nous sommes là pour vous accompagner dans vos projets graphiques avec passion et professionnalisme.
+</p>
+      <p>Découvrez nos services, explorez notre portfolio, et n'hésitez pas à nous contacter pour toute collaboration<p/>
+</div>
+
+<div id="aproposSection" class="content" style="text-align: center">
+  <h2 style="color: orange;"> À propos de nous</h2>
+<p>
+Master Lamda Design est une agence créative spécialisée dans le design graphique, la création de contenu visuel et le développement de l’identité visuelle.</p>
+<p style="color: green;">Nous croyons que chaque marque mérite d’être mise en valeur à travers un design original, professionnel et adapté à ses objectifs.</p>
+<p>
+Avec une expérience riche et une passion pour l’esthétique, nous accompagnons nos clients dans la réalisation de leurs projets visuels : logos, affiches, brochures, présentations, contenu digital, et bien plus encore.
+</p>
+<p style="color: orange;"> Notre mission : faire parler votre vision à travers le design.
+</p>
+</div>
+
+<div id="portfolioSection" class="content" style="text-align: center">
+  <p style="color: orange;"> Pour voir nos projets, veuillez cliquez sur le bouton Portofolio en dessous.</p>
+        
+        <h1> Sur votre coté droit s'il vous plait !!!</h1>
+</div>
+   </header>
+    
+    <script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll(".content");
+    sections.forEach(s => s.style.display = "none"); // ficha zote
+    const selected = document.getElementById(sectionId);
+    if (selected) selected.style.display = "block"; // onyesha moja tu
+  }
+
+  //
+  document.addEventListener("DOMContentLoaded", function() {
+    showSection("accueilSection");
+  });
+</script>  
+  <section class="hero">
+    <h2 id="hero-text">Ce que nous pouvons faire pour vous :</h2>
+    <div class="btns">
+      <button class="btn" onclick="afficherServices()">Nos services</button>
+      <button class="btn" onclick="afficherPortfolio()">Portfolio</button>
+    </div>
+  </section>  
+
+  <section class="section-content" id="services">
+    <div id="services-text"></div>
+  </section>  
+
+  <section class="portfolio" id="portfolio" style="display: none;"
+    <img src="https://via.placeholder.com/300x200?text=Design+1" alt="Design 1">
+  </section>
+<header>
+<section id="portfolio-selection">
+  <h2 class="text-center"><p style="color:orange">NOTRE PORTOFOLIO</p></h2>
+  
+  <div class="portfolio-menu text-center">
+    <button class="portfolio-btn" data-category="anniversaires">Affiches d’anniversaires</button>
+    <button class="portfolio-btn" data-category="chretiennes">Affiches à thème chrétien</button>
+    <button class="portfolio-btn" data-category="evenementielles">Affiches événementielles</button>
+    <button class="portfolio-btn" data-category="logos">Logos</button>
+  </div>
+</header>
+  <div class="portfolio-gallery">
+    <div class="portfolio-item anniversaires">
+      <section style="text-align: center;">
+      <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0021.jpg" width="150" alt="Affiche d’anniversaire">
+        <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0014.jpg" width="120" alt="Affiche d'anniversaire">
+          <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0015.jpg" width="150" alt="Affiche d'anniversaire">
+        <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250425-WA0021.jpg" width="120" alt="Affiche d'anniversaire">
+      </section>
+   </div>
+        
+    <div class="portfolio-item chretiennes">
+      <section style="text-align: center;">
+      <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0019.jpg" width="200" alt="affiche evenementiel">
+      </section>
+    </div>
+    <div class="portfolio-item evenementielles">
+      <section style="text-align: center;">
+      <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250425-WA0009.jpg" width="150" alt="affiche evenementiel">
+        <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250425-WA0023.jpg" width="150" alt="Affiche d'anniversaire">
+        <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0007.jpg" width="155" alt="auto">
+        <img src="/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250520-WA0017.jpg" width="150" alt="auto">
+        
+      </section>
+    </div>
+    <div class="portfolio-item logos">
+      <section style="text-align: center;">
+      <img src="/storage/emulated/0/Pictures/Photoroom/IMG-20250520-WA0005.png" width="150"alt="Logo">
+        <img src="/storage/emulated/0/Pictures/Photoroom/IMG-20250520-WA0011.png" width="150" alt="Logo">
+        <img src="/storage/emulated/0/Pictures/Photoroom/IMG-20250520-WA0002.png" width="150" alt="Logo">
+        
+    </div>
+  </div>
+</section>
+
+
+<script>
+  function togglePortfolio() {
+    var section = document.getElementById("portfolio-section");
+    if (section.style.display === "none") {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  }
+</script>
+<script>
+  const buttons = document.querySelectorAll(".portfolio-btn");
+  const items = document.querySelectorAll(".portfolio-item");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
+
+      items.forEach(item => {
+        item.style.display = item.classList.contains(category) ? "block" : "none";
+      });
+    });
+  });
+</script>
+
+<section style="text-align: center;">
+  <img src="/storage/emulated/0/Pictures/Photoroom/IMG-20250426-WA0002.png " width="300" height="400">
+   <h2 style="color: orange"> Nathanael Labani</h2>
+  <p style="color: #33333"> Email: nathanellabani@gmail.com</p>
+  </section>
+
+  <section class="form-section" id="contact">
+    <h2>Contactez-nous</h2>
+   <form id="contact-form">
+    <label>Nom: <input type="text" name="user_name" required></label><br>
+    <label>Email: <input type="email" name="user_email" required></label><br>
+    <label>Message:<br><textarea name="message" required></textarea></label><br>
+    <button type="submit">Envoyer</button>
+   </form>
+  </section>  
+
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("0wgrXIP708vbFC-Uw"); // Remplace TON_USER_ID par ton vrai user ID EmailJS
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_voz9cda', 'template_w0ynpu7', this)
+        .then(function() {
+          alert('Message envoyé avec succès!');
+        }, function(error) {
+          alert('Échec de l’envoi : ' + JSON.stringify(error));
+        });
+    });
+  </script>
+
+  <div class="social-links">
+    <a href="https://wa.me/243823402914" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100083111167203" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>  
+<script>
+document.getElementById("language-select").addEventListener("change", function () {
+  const lang = this.value;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key];
+  });
+});
+</script>
+
+
+<script>
+  function afficherServices() {
+    document.getElementById("services").style.display = "block";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("services-text").innerHTML = `
+      <h3 style="color: orange;">Nos services incluent :</h3>
+      <ul>
+        <li>Design de logos professionnels</li>
+        <li>Création d’affiches et flyers</li>
+        <li>Contenu pour les réseaux sociaux</li>
+        <li>Présentations professionnelles</li>
+        <li>Identité visuelle complète</li>
+      </ul>
+    `;
+  }
+
+  function afficherPortfolio() {
+    document.getElementById("services").style.display = "none";
+    document.getElementById("portfolio").style.display = "block";
+  }
+</script>
+
+  <script>
+    const textes = {
+      fr: {
+        hero: "Ce que nous pouvons faire pour vous :",
+        services: `Chez <strong>Master Lamda Design</strong>, nous transformons vos idées en chefs-d'œuvre visuels.<br><br>
+          <strong>Nos services comprennent :</strong><ul>
+            <li>Conception de logos professionnels</li>
+            <li>Affiches publicitaires</li>
+            <li>Cartes de visite</li>
+            <li>Bannières pour les réseaux sociaux</li>
+            <li>Flyers et brochures</li>
+            <li>Édition d'images et retouche</li>
+            <li>Maquettes 3D simples</li>
+            <li>Création de contenu pour les marques</li>
+          </ul>`
+      },
+      en: {
+        hero: "What we can do for you:",
+        services: `At <strong>Master Lamda Design</strong>, we turn your ideas into visual masterpieces.<br><br>
+          <strong>Our services include:</strong><ul>
+            <li>Professional logo design</li>
+            <li>Advertising posters</li>
+            <li>Business cards</li>
+            <li>Social media banners</li>
+            <li>Flyers and brochures</li>
+            <li>Image editing and retouching</li>
+            <li>Simple 3D mockups</li>
+            <li>Content creation for brands</li>
+          </ul>`
+      },
+      sw: {
+        hero: "Tunachoweza kukufanyia:",
+        services: `Katika <strong>Master Lamda Design</strong>, tunabadilisha mawazo yako kuwa kazi za sanaa zenye mvuto.<br><br>
+          <strong>Huduma zetu ni pamoja na:</strong><ul>
+            <li>Ubunifu wa logo za kitaalamu</li>
+            <li>Mabango ya matangazo</li>
+            <li>Kadi za biashara</li>
+            <li>Bendera za mitandao ya kijamii</li>
+            <li>Vipeperushi na brosha</li>
+            <li>Uhariri wa picha</li>
+            <li>Michoro ya 3D rahisi</li>
+            <li>Uundaji wa maudhui ya chapa</li>
+          </ul>`
+      }
+    };
+
+    let langueActuelle = 'fr';
+
+    function changerLangue(langue) {
+      langueActuelle = langue;
+      document.getElementById('hero-text').innerHTML = textes[langue].hero;
+      if (document.getElementById('services').style.display !== 'none') {
+        afficherServices();
+      }
+    }
+
+    function afficherServices() {
+      document.getElementById('services').style.display = 'block';
+      document.getElementById('portfolio').style.display = 'none';
+      document.getElementById('services-text').innerHTML = textes[langueActuelle].services;
+    }
+
+    function afficherPortfolio() {
+      document.getElementById('services').style.display = 'none';
+      
+      <script>
+document.getElementById("language-select").addEventListener("change", function () {
+  const lang = this.value;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key];
+  });
+});
+      
+      // Save selected language
+localStorage.setItem("lang", lang);
+
+// On load, check saved language
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "en";
+  document.getElementById("language-select").value = savedLang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[savedLang][key];
+  });
+});
+</script>    
+
+  <div class="language-switcher">
+    <button onclick="changerLangue('fr')">Français</button>
+    <button onclick="changerLangue('en')">English</button>
+    <button onclick="changerLangue('sw')">Swahili</button>
+  </div>
+      
+      <footer style="text-align: center; padding: 15px; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: #fff">
+      <p style="margin: 0;">
+       Tout droit reservé
+        <a href="https://yourportofolio.com" target="_blank" style="color: #00ffcc; text-decoration: none">
+          Nathanaël-Labani
+        </a> &copy; 2025
+        
+      </p>
+
+<footer style="text-align: center; padding: 1px; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: #fff;">
+  <p style="margin: 0;">
+    Made with love by
+    <a href="https://yourportfolio.com" target="_blank" style="color: orange; text-decoration: hover;">
+      Oscar-Rabani
+    </a> &copy; 2025
+  </p>
+  <p style="margin-top: 10px;">
+    <a href="https://wa.me/243812707127" target="_blank" class="footer-link">
+      <i class="fab fa-whatsapp social-icon whatsapp-icon"></i>
+    </a>
+    <a href="https://facebook.com/Oscar.rabani" target="_blank" class="footer-link">
+      <i class="fab fa-facebook social-icon facebook-icon"></i>
+    </a>
+  </p>
+</footer>
+  <script>
+    const textes = {
+      fr: {
+        titre: "MASTER LAMDA DESIGN",
+        hero: "Ce que nous pouvons faire pour vous :",
+        btn1: "Nos services",
+        btn2: "Portofolio",
+        contact: "Contactez-nous",
+        envoyer: "Envoyer"
+      },
+      en: {
+        titre: "MASTER LAMDA DESIGN",
+        hero: "What we can do for you:",
+        btn1: "Our Services",
+        btn2: "Portfolio",
+        contact: "Contact Us",
+        envoyer: "Send"
+      },
+      sw: {
+        titre: "MASTER LAMDA DESIGN",
+        hero: "Tunachoweza kukufanyia:",
+        btn1: "Huduma Zetu",
+        btn2: "Portfolio",
+        contact: "Wasiliana Nasi",
+        envoyer: "Tuma"
+      }
+    };function changerLangue(langue) {
+  const t = textes[langue];
+  document.querySelector('header h1').textContent = t.titre;
+  document.querySelector('.hero h2').textContent = t.hero;
+  document.querySelectorAll('.btn')[0].textContent = t.btn1;
+  document.querySelectorAll('.btn')[1].textContent = t.btn2;
+  document.querySelector('.form-section h2').textContent = t.contact;
+  document.querySelector('.form-section button').textContent = t.envoyer;
+}
+  </script>
+</body>
+      </html>
+      
+      
+
